@@ -4,21 +4,21 @@
 
 ```cat```  (concatenate) հրամանը կարդում է մեկ կամ մի քանի ֆայլեր և արտածում է դրանց պարունակությունը։
 
-```
+```bash
 cat > file1
 ```
 Այս հրամանը ստեղծում կամ վերագրանցում է ```file1 ```անունով ֆայլ և թույլ է տալիս տեքստ մուտքագրել այդ ֆայլի մեջ: Կարող ենք մուտքագրել տեքստ, սեղմել ```Ctrl+D``` (մուտքագրումն ավարտելու համար) և բովանդակությունը պահել ֆայլում:
-```
+```bash
 cat file1
 ```
 Այս հրամանը ցուցադրում է ```file1``` ֆայլի բովանդակությունը տերմինալի մեջ: Այսպիսով, եթե ```file1``` գոյություն ունի և պարունակում է որոշակի տեքստ, ապա կտեսնենք այդ տեքստը էկրանին:
-```
+```bash
 cat < file1
 ```
 Այս հրամանը օգտագործում է ```<``` նիշը` մուտքագրումը վերահղելու համար: Այսինքն, cat հրամանը կարդում է ```file1``` ֆայլի մուտքագրումը և ցուցադրում այն ​​տերմինալի էկրանին: Սա համարժեք է ```cat file1``` հրամանին:
 
 ### 2. Ստեղծել որոշակի պարունակությամբ 3 տեքստային ֆայլ՝ file1.txt, file2.txt, file3.txt։ Այս ֆայլերի պարունակությունը կցել միմյանց և գրել նոր ֆայլում՝ final.txt։
-```
+```bash
 cat > file1.txt
 cat > file2.txt
 cat > file3.txt
@@ -27,13 +27,13 @@ cat file1.txt file2.txt file3.txt > Final.txt
 
 ### 3. Ցուցադրել /home/student դիրեկտորիայում տեքստային ֆայլերի քանակը։
 
-```
+```bash
 ls -l /home/student/*.txt | wc -l
 ```
 
 ### 4. Սորտավորել file1.txt, file2.txt, file3.txt ֆայլերի պարունակությունը և գրել նոր ֆայլում։
 
-```
+```bash
 cat file1.txt file2.txt file3.txt | sort > sorted.txt
 ```
 
@@ -41,7 +41,7 @@ cat file1.txt file2.txt file3.txt | sort > sorted.txt
 
 ### 5.Արտածել /home/student դիրեկտորիայի առաջին 15 ֆայլերը՝ դասավորված նվազման կարգով ըստ ֆայլի ծավալի։
 
-```
+```bash
 ls /home/student/* | sort -rh | head -n 15
 ```
 
@@ -50,13 +50,13 @@ ls /home/student/* | sort -rh | head -n 15
 
 ### 6. Արտածել /home/student դիրեկտորիայի ֆայլերի ցուցակը, միաժամանակ այն տեղադրելով ls.txt ֆայլում։
 
-```
+```bash
 ls /home/student > /home/student/ls.txt
 ```
 
 ### 7.Օգտագործելով tr հրամանը՝ գաղտնագրել "secret text" տողը ROT13 ալգորիթմով։ Վերծանել գաղտնագրված հաղորդագրությունը։
 
-```
+```bash
 echo "secret text" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
 ```
 Գաղտնագրված հաղորդագրությունը կլինի ```"frperg grkg"``` քանի որ 
@@ -70,7 +70,7 @@ echo "secret text" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
 
 ### 8. Ստեղծել նոր ֆայլ՝ home.txt, հետևյալ պարունակությամբ․Student’s home directory is {home_dir}.sed հրամանի միջոցով փոխարինել {home_dir} հատվածը /home/student-ով։
 
-```
+```bash
 echo "Student’s home directory is {home_dir}." > home.txt
 sed 's/{home_dir}/\/home\/student/' home.txt > home_modified.txt
 ```
@@ -79,7 +79,7 @@ sed 's/{home_dir}/\/home\/student/' home.txt > home_modified.txt
 
 ### 9. Ստեղծել ֆայլ, որն ունի առնվազն 5 տող պարունակություն՝ file4.txt։ Արտածել 2-4-րդ տողերը:
 
-```
+```bash
 echo "Line 1" > file4.txt
 echo "Line 2" >> file4.txt
 echo "Line 3" >> file4.txt
@@ -90,6 +90,6 @@ sed -n '2p;4p' file4.txt
 
 ### 10. Ջնջել file4.txt ֆայլի 2-4-րդ տողերը։
 
-```
+```bash
 sed -i '2d;4d' file4_modified.txt
 ```
